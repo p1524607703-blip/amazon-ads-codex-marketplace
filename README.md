@@ -4,11 +4,25 @@
 
 ## 发给运营的唯一链接
 
-管理员只需把本 GitHub 仓库链接发给运营。运营先安装并登录公司 Codex/OpenAI 工作区，然后把链接粘贴给 Codex，并发送：
+运营只需把下面这一句话复制到 Codex：
 
-> 安装这个 GitHub 链接里的 `amazon-ads-ops-readonly` 插件。安装完成后新建任务，检查总工具 10、只读工具 10、写入工具 0、管理员工具 0；任一数量不符就停止使用。
+> 请直接为我安装并验收公司的亚马逊广告运营只读插件：https://github.com/p1524607703-blip/amazon-ads-codex-marketplace
 
-Codex 会添加团队 Marketplace、安装插件并打开必要的 OpenAI 应用授权。运营不需要执行命令，也不需要配置数据库。
+其余安装和安全规则由 Codex 按本仓库自动执行。普通步骤不要反复询问运营；只有 OpenAI 平台强制要求账号本人完成授权时，才提示运营点击确认。
+
+## Codex 自动执行规则
+
+1. 添加或刷新本仓库对应的 `amazon-ads-team` Marketplace，安装并启用 `amazon-ads-ops-readonly`。
+2. 如果当前任务不能立即读取新插件，直接新建任务继续验收。
+3. 只连接名称明确带“运营只读”的公司应用，不修改或连接负责人现用的 25 工具应用。
+4. 调用 `get_ads_data_context`，只接受总工具 10、只读 10、写入 0、管理员 0。
+5. 验收后测试数据口径、入库健康和近期广告表现；任一权限数量不符立即停止。
+
+## 运营电脑不需要的配置
+
+- 不需要安装 pgAdmin、DBeaver、Navicat、psql 或其他 PostgreSQL 客户端。
+- 不需要提供 RDS 地址、白名单、账号、密码、证书、Tunnel ID 或 API key。
+- 不需要让运营电脑直连阿里云 RDS；所有查询通过公司只读应用、Secure MCP Tunnel 和后端只读服务账号完成。
 
 仓库公开不代表数据库公开。真正的数据访问仍由公司 OpenAI 工作区成员资格、独立只读应用、Secure MCP Tunnel 和 RDS 只读角色共同控制。
 
