@@ -1,0 +1,18 @@
+{
+  "name": "amazon-ads-ops-personal-installer",
+  "version": "1.0.0",
+  "description": "在个人版 ChatGPT/Codex 账号中安装并验收亚马逊广告运营只读连接，不要求 Business 工作区。",
+  "author": {
+    "name": "Internal Data Team"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "亚马逊广告运营只读（个人版安装器）",
+    "shortDescription": "为当前个人账号创建专属只读应用映射并完成 10/10/0/0 验收。",
+    "longDescription": "无账号绑定的安装引导插件。它不会复用负责人个人账号的应用授权，而是在当前个人版 ChatGPT/Codex 中连接或注册运营只读应用，并生成当前账号专属的本地插件映射。",
+    "developerName": "Internal Data Team",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "请在我的个人版 ChatGPT/Codex 账号中安装并验收亚马逊广告运营只读连接。"
+  }
+}
