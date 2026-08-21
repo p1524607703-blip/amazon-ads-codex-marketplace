@@ -1,0 +1,20 @@
+{
+  "name": "amazon-ads-team",
+  "interface": {
+    "displayName": "Amazon Ads Team"
+  },
+  "plugins": [
+    {
+      "name": "amazon-ads-ops-readonly",
+      "source": {
+        "source": "local",
+        "path": "./plugins/amazon-ads-ops-readonly"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data & Analytics"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "apps": {
+    "amazon_ads_ops_readonly": {
+      "id": "asdk_app_6a86c682013c819196e246f99a8b5481",
+      "required": true,
+      "category": "Data & Analytics"
+    }
+  }
+}
